@@ -2,7 +2,7 @@
 
 https://hub.docker.com/r/tenox7/openvms73
 
-Running:
+## Running
 
 ```sh
 docker run -it --rm tenox7/openvms73:latest
@@ -21,6 +21,10 @@ To forward X11 XDMCP Query add `-p 177:177`:
 ```sh
 docker run -it --rm -p 23:23 -p 177:177 tenox7/openvms73:latest
 ```
+
+*I was not able to connect to it unless client display is `:0`. In particular `Xnest -ac -query :1` did not work for me. Only `:0` does. If you know how to fix it, LMK.*
+
+## Persistent State
 
 **WARNING:** by default the guest is ephemeral, the state is NOT preserved once you exit from the container.
 
