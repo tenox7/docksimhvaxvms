@@ -2,6 +2,8 @@
 
 https://hub.docker.com/r/tenox7/openvms73
 
+![VMSX11](vmsxdcmp.png)
+
 ## Running
 
 ```sh
