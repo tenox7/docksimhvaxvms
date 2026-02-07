@@ -18,10 +18,10 @@ To telnet/ftp/rlogin/rsh to the guest add `-p`, for example for telnet:
 docker run -it --rm -p 23:23 tenox7/openvms73:latest
 ```
 
-To forward X11 XDMCP Query add `-p 177:177`:
+To forward X11 XDMCP Query add `-p 177:177/udp`:
 
 ```sh
-docker run -it --rm -p 23:23 -p 177:177 tenox7/openvms73:latest
+docker run -it --rm -p 23:23 -p 177:177/udp tenox7/openvms73:latest
 ```
 
 *I was not able to connect to it unless client display is `:0`. In particular `Xnest -ac -query :1` did not work for me. Only `:0` does. If you know how to fix it, LMK.*
