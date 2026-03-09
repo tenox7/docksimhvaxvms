@@ -29,6 +29,8 @@ Conveniently this container now contains a VNC Server with X11 XDMCP Query. You 
 docker run -it --rm -p 5900:5900 tenox7/openvms73:latest
 ```
 
+Change resolution: `-e GEOMETRY=1920x1200`
+
 ## X11
 
 To forward X11 XDMCP Query add `-p 177:177/udp`:

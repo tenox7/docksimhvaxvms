@@ -5,7 +5,8 @@ DISK_RUNTIME="/data/vax.dsk"
 
 if [ ! -f "$DISK_RUNTIME" ]; then
     echo "============================================"
-    echo "Default login: system password: systempassword"
+    echo "Username: system" 
+    echo "Password: systempassword"
     echo "VNC password: vncvms"
     echo "============================================"
     echo ""
