@@ -4,13 +4,14 @@ DISK_COMPRESSED="/openvms/vax.dsk.xz"
 DISK_RUNTIME="/data/vax.dsk"
 
 if [ ! -f "$DISK_RUNTIME" ]; then
-    echo "Decompressing disk image... (Mount volume or path -v ...:/data to persist changes)"
-    xz -vdc "$DISK_COMPRESSED" > "$DISK_RUNTIME"
-    echo "Done..."
     echo "============================================"
     echo "Default login: system password: systempassword"
     echo "VNC password: vncvms"
     echo "============================================"
+    echo ""
+    echo "Decompressing disk image... (Mount volume or path -v ...:/data to persist changes)"
+    xz -vdc "$DISK_COMPRESSED" > "$DISK_RUNTIME"
+    echo "Done..."
 else
     echo "Using existing disk image"
 fi
