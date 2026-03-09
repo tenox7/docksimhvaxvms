@@ -50,6 +50,7 @@ COPY nvram.bin /openvms/
 COPY vax.ini /openvms/vax.ini
 COPY entrypoint.sh /openvms/
 COPY vnc.sh /openvms/
+COPY dec/ /usr/share/fonts/X11/dec/
 
 COPY --chmod=755 ps-wrapper.sh /usr/bin/ps-wrapper.sh
 RUN chmod +x /openvms/entrypoint.sh /openvms/vnc.sh && \

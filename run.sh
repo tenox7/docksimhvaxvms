@@ -1,6 +1,7 @@
 #!/bin/sh
 
 docker run -it --rm \
+    -e GEOMETRY=1920x1200 \
     -p 23:23 \
     -p 21:21 \
     -p 513:513 \
