@@ -25,5 +25,5 @@ if [ ! -f "$NVRAM_RUNTIME" ]; then
 fi
 
 cd /data
-/openvms/vnc.sh >/dev/null 2>&1 &
+/openvms/vnc.sh >/openvms/vnc.log 2>&1 &
 exec /openvms/vax /openvms/vax.ini
