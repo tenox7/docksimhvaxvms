@@ -6,4 +6,6 @@ docker run -it --rm \
     -p 513:513 \
     -p 514:514 \
     -p 177:177 \
+    -p 5900:5900 \
+    --name docksimhvaxvms \
     tenox7/openvms73:latest
