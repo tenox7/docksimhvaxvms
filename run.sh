@@ -12,5 +12,3 @@ docker run -it --rm \
     --name docksimhvaxvms \
     tenox7/openvms73:latest
 
-    #-v ./data:/data \
-    #-v /Volumes/tmp/VMS:/vms \
