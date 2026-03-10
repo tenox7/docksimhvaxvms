@@ -3,22 +3,14 @@ TAG := latest
 PLATFORMS := linux/amd64,linux/arm64
 BUILDER := openvms-builder
 
-.PHONY: all build build-multiplatform push run clean setup-buildx compress
+.PHONY: all build build-multiplatform push run clean setup-buildx
 
 all: build
 
-compress:
-	@if [ ! -f vax.dsk.xz ]; then \
-		echo "Compressing vax.dsk..."; \
-		xz -k vax.dsk; \
-	else \
-		echo "vax.dsk.xz already exists"; \
-	fi
-
-build: compress
+build:
 	docker build -t $(IMAGE):$(TAG) .
 
-push: compress
+push:
 	docker buildx build \
 		--platform $(PLATFORMS) \
 		-t $(IMAGE):$(TAG) \
