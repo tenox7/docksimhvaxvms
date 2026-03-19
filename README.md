@@ -39,7 +39,7 @@ To forward X11 XDMCP Query add `-p 177:177/udp`:
 docker run -it --rm -p 23:23 -p 177:177/udp tenox7/openvms73:latest
 ```
 
-*I was not able to connect to it unless client display is `:0`. In particular `Xnest -ac -query :1` did not work for me. Only `:0` does. If you know how to fix it, LMK.*
+*I was not able to connect to it unless the client display is `:0`. In particular `Xnest -ac -query :1` did not work for me. Only `:0` does. If you know how to fix it, LMK.*
 
 
 ## Persistent State
@@ -55,3 +55,6 @@ docker run -it --rm -v path:/data tenox7/openvms73:latest
 
 The disk image and nvram is stored in `/data` in the container. 
 
+## Quiting
+
+Ctrl^E in the terminal will shut down SIMH.
