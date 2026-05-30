@@ -23,7 +23,7 @@ docker run -it --rm -p 23:23 tenox7/openvms73:latest
 
 ## VNC to DEC Windows
 
-Conveniently this container now contains a VNC Server with X11 XDMCP Query. You can just VNC in to the container! The password is `vncvms`.  On MacOS you can simply `open vnc://127.0.0.1`.
+Conveniently this container now contains a VNC Server with X11 XDMCP Query. You can just VNC in to the container! The password is `vncvms`.  On MacOS you can simply `open vnc://127.0.0.1`. If using RealVNC you might need to set `ColorLevel` to `full`.
 
 ```sh
 docker run -it --rm -p 5900:5900 tenox7/openvms73:latest
