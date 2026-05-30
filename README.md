@@ -23,17 +23,17 @@ docker run -it --rm -p 23:23 tenox7/openvms73:latest
 
 ## VNC to DEC Windows
 
-Conveniently this container now contains a VNC Server with X11 XDMCP Query. You can just VNC in to the container! The password is `vncvms`.  On MacOS you can simply `open vnc://127.0.0.1`. If using RealVNC you might need to set `ColorLevel` to `full`.
+A VNC Server is built-in the container. The password is `vncvms`.  On MacOS you can simply `open vnc://127.0.0.1`. If using RealVNC you might need to set `ColorLevel` to `full`.
 
 ```sh
 docker run -it --rm -p 5900:5900 tenox7/openvms73:latest
 ```
 
-Change resolution: `-e GEOMETRY=1920x1200`
+To change resolution: `-e GEOMETRY=1920x1200`
 
 ## X11
 
-To forward X11 XDMCP Query add `-p 177:177/udp`:
+To forward X11 XDMCP Query port add `-p 177:177/udp`:
 
 ```sh
 docker run -it --rm -p 23:23 -p 177:177/udp tenox7/openvms73:latest
@@ -44,13 +44,13 @@ docker run -it --rm -p 23:23 -p 177:177/udp tenox7/openvms73:latest
 
 ## Persistent State
 
-**WARNING:** by default the guest is ephemeral, the state is NOT preserved once you exit from the container.
+By default the guest is ephemeral, the state is NOT preserved once you exit from the container. Which is desired for experimentation and messing up the system for fun.
 
-In order to persist the data disk mount `/data` as a volume or bind mount:
+In order to persist the data disk mount `/data` as a volume or bind mount. Simply add:
 
 
 ```sh
-docker run -it --rm -v path:/data tenox7/openvms73:latest
+docker run -it --rm -v <volume|path>:/data tenox7/openvms73:latest
 ```
 
 The disk image and nvram is stored in `/data` in the container. 
