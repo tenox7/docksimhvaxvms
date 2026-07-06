@@ -21,6 +21,16 @@ To telnet/ftp/rlogin/rsh to the guest add `-p`, for example for telnet:
 docker run -it --rm -p 23:23 tenox7/openvms73:latest
 ```
 
+## RSH / RLOGIN
+
+rsh and rlogin are fully functional thanks to a built-in relay:
+
+```sh
+rsh system@127.0.0.1 dir
+```
+
+You can use [RSH-MCP](https://github.com/tenox7/rsh-mcp) with your favorite agent.
+
 ## VNC to DEC Windows
 
 A VNC Server is built-in the container. The password is `vncvms`.  On MacOS you can simply `open vnc://127.0.0.1`. If using RealVNC you might need to set `ColorLevel` to `full`.

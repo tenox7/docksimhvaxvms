@@ -26,4 +26,5 @@ fi
 
 cd /data
 /openvms/vnc.sh >/openvms/vnc.log 2>&1 &
+/openvms/relay 513=127.0.0.1:10513 514=127.0.0.1:10514 >/openvms/relay.log 2>&1 &
 exec /openvms/vax /openvms/vax.ini

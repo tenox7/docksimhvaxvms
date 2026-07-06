@@ -16,6 +16,11 @@ RUN git clone https://github.com/simh/simh.git && \
     cd simh && \
     make vax
 
+FROM golang:1.24-bookworm AS gobuilder
+WORKDIR /build
+COPY relay/ .
+RUN CGO_ENABLED=0 go build -o relay .
+
 FROM debian:bookworm-slim
 
 RUN apt-get update && apt-get install -y \
@@ -44,6 +49,7 @@ RUN ln -s /usr/lib/aarch64-linux-gnu/libpcap.so.1.10 /usr/lib/aarch64-linux-gnu/
     chmod 600 /root/.vnc/passwd
 
 COPY --from=builder /build/simh/BIN/vax /openvms/vax
+COPY --from=gobuilder /build/relay /openvms/relay
 COPY vax.dsk.xz /openvms/
 COPY ka655x.bin /openvms/
 COPY nvram.bin /openvms/
