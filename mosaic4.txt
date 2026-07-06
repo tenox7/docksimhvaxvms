@@ -1,0 +1,6 @@
+VMS Mosaic 4.0 "MOSAIC.DAT is old": copy ~/tmp/mosaic40/mosaic.dat_color to
+SYS$COMMON:[DECW$DEFAULTS.USER]MOSAIC.DAT (must contain Mosaic*AppDefaultsVersion: 2;
+add Mosaic*homeDocument: file://localhost/decw$utils:home.html for the homepage),
+SET FILE/PROT=(W:RE) on it, then DELETE the stale 1994 copies:
+SYS$COMMON:[DECW$DEFAULTS.SYSTEM]MOSAIC.DAT;*,MOSAIC.DAT_COLOR;*,MOSAIC.DAT_MONO;*
+and SYS$SYSROOT:[SYSMGR]MOSAIC.DAT;* (it overrides system defaults).
