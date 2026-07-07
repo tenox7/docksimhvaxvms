@@ -32,7 +32,7 @@ RUN apt-get update && apt-get install -y \
     bash \
     iproute2 \
     procps \
-    tigervnc-standalone-server \
+    tightvncserver \
     xfonts-base \
     xfonts-100dpi \
     xfonts-75dpi \
@@ -45,7 +45,7 @@ WORKDIR /openvms
 RUN ln -s /usr/lib/aarch64-linux-gnu/libpcap.so.1.10 /usr/lib/aarch64-linux-gnu/libpcap.so || \
     ln -s /usr/lib/x86_64-linux-gnu/libpcap.so.1.10 /usr/lib/x86_64-linux-gnu/libpcap.so || true && \
     mkdir -p /data /root/.vnc && \
-    sh -c 'echo vncvms | vncpasswd -f > /root/.vnc/passwd' && \
+    sh -c 'echo vncvms | tightvncpasswd -f > /root/.vnc/passwd' && \
     chmod 600 /root/.vnc/passwd
 
 COPY --from=builder /build/simh/BIN/vax /openvms/vax
