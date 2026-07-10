@@ -91,7 +91,7 @@ From console/etc login as office / office. In DECterm as another user `set host 
 `vax.dsk.xz` is not stored in git. It's published as a GitHub release asset (`disk-vN` tags), the Dockerfile pulls the latest release.
 
 ```sh
-./run-data.sh           # run with ./data mounted, modify VMS, shut down with Ctrl^E
+docker run -it --rm -v ./data:/data tenox7/openvms73:latest   # modify VMS, shut down with Ctrl^E
 make data               # compress data/vax.dsk into vax.dsk.xz
 make data-release V=15  # upload as release disk-v15 and mark latest (V = next number)
 make build              # rebuild image with the new disk
