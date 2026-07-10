@@ -50,7 +50,7 @@ RUN ln -s /usr/lib/aarch64-linux-gnu/libpcap.so.1.10 /usr/lib/aarch64-linux-gnu/
 
 COPY --from=builder /build/simh/BIN/vax /openvms/vax
 COPY --from=gobuilder /build/relay /openvms/relay
-COPY vax.dsk.xz /openvms/
+ADD https://github.com/tenox7/docksimhvaxvms/releases/latest/download/vax.dsk.xz /openvms/vax.dsk.xz
 COPY ka655x.bin /openvms/
 COPY nvram.bin /openvms/
 COPY vax.ini /openvms/vax.ini
