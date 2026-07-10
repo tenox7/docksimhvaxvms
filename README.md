@@ -68,3 +68,20 @@ The disk image and nvram is stored in `/data` in the container.
 ## Quiting
 
 Ctrl^E in the terminal will shut down SIMH.
+
+## Applications Preinstalled
+
+- DEC Write
+- DEC [ALL-IN-1](https://en.wikipedia.org/wiki/ALL-IN-1)
+- Mosaic Browser
+- Netscape Navigator
+- Word Perfect
+- DEC Write
+- DEC Flight Simulator
+- SoftPC
+- NEdit
+- Etc
+
+### How to run ALL-IN-1 ?
+
+From console/etc login as office / office. In DECterm as another user `set host 0`.
