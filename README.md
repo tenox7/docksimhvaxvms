@@ -10,7 +10,7 @@ https://hub.docker.com/r/tenox7/openvms73
 docker run -it --rm tenox7/openvms73:latest
 ```
 
-Login as `system` password is `systempassword`.
+Login as `system` password is `system`.
 
 
 ## Telnet 
